@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cute Animals</title>
+    <style>
+        .header {
+            background-color: #7C8B9B;
+            color: #FFFFFF;
+            width: 280px;
+        }
+        .strike {
+           text-decoration: line-through;
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#animals li").click(function () {
+
+                var index = $(this).index();
+                var text = $(this).text();
+                
+                $("#" + text).addClass("strike");
+                //alert('Index is: ' + index + ' and text is ' + text);
+
+                $("#order").append("<li>" + text + "</li>");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <h1 class="header">Cute Animals</h1>
+    <div>by Ed Barker and Genghis Khan</div>
+    <div>Here are some animals.  Click on the cutest one first, then the next cutest, and so on.</div>
+    <ul id="animals">
+        <li id="Cat" style="">Cat</li>
+        <li id="Dog">Dog</li>
+        <li id="Goat">Goat</li>
+        <li id="Kangaroo">Kangaroo</li>
+        <li id="Koala">Koala</li>
+    </ul>
+
+    <p>Your cute order:</p>
+    <ul id="order">
+    </ul>
+</body>
+</html>

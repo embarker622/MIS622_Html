@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Count the Muffins</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var donutSold = 0;
+        var muffinSold = 0;
+
+        $(document).ready(function () {
+            $("#sold_donut").click(function () {
+                donutSold++;
+            });
+            $("#sold_muffin").click(function () {
+                muffinSold++;
+            });
+            $("#show_sales").click(function () {
+
+                var msg = "Donuts: " + donutSold + " Muffins: " + muffinSold;
+                alert(msg);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <button id="sold_donut" type="button">Sold a donut</button>
+        <br />
+        <button id="sold_muffin" type="button">Sold a muffin</button>
+        <br />
+        <button id="show_sales" type="button">Show sales</button>
+    </div>
+</body>
+</html>

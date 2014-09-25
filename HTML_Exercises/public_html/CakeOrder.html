@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cake Order</title>
+    <style>
+        .header {
+            background-color: #7C8B9B;
+            color: #FFFFFF;
+            width: 280px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+            a:hover {
+                font-size: 120%;
+                font-weight: 900;
+            }
+
+        p {
+            font-weight: 900;
+        }
+
+        #cakeSize {
+            float: left;
+        }
+        #cakeFlavor {
+             float: left;
+        }       
+        #cakeFrosting {
+             float: left;
+        }
+         #divFrosting, #divFlavor, #divSize{
+             
+        float:left;
+         width:90px;
+        }
+    </style>
+    <script type="text/javascript">
+        var size = 0;
+        var flavor = 0;
+        var frosting = 0;
+
+        function setSize(val) {
+            size = 1;
+            document.getElementById("cakeSize").innerHTML = val;
+        }
+        function setFlavor(val) {
+            flavor = 1;
+            document.getElementById("cakeFlavor").innerHTML = val;
+        }
+        function setFrosting(val) {
+            frosting = 1;
+            document.getElementById("cakeFrosting").innerHTML = val;
+        }
+
+        function ordered() {
+
+            if (size != 1) {
+                alert("Please select a size.");
+            }
+            if (flavor != 1) {
+                alert("Please select a flavor.");
+            }
+            if (frosting != 1) {
+                alert("Please select a frosting.");
+            }
+
+            if ((size > 0) && (flavor > 0) && (frosting > 0)) {
+                alert("Thank you for your order.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 class="header">Order Your Cake</h1>
+    <div>Please click on one opetion in each category.</div>
+    <p>Size</p>
+    <ul title="Size">
+        <li><a href="#" onclick="return setSize('Large');">Large</a></li>
+        <li><a href="#" onclick="return setSize('Medium');">Medium</a></li>
+        <li><a href="#" onclick="return setSize('Small');">Small</a></li>
+    </ul>
+
+    <p>Flavor</p>
+    <ul title="Size">
+        <li><a href="#" onclick="return setFlavor('Chocolate');">Chocolate</a></li>
+        <li><a href="#" onclick="return setFlavor('Vanilla');">Vanilla</a></li>
+    </ul>
+
+
+    <p>Frosting</p>
+    <ul title="Size">
+        <li><a href="#" onclick="return setFrosting('Chocolate');">Chocolate</a></li>
+        <li><a href="#" onclick="return setFrosting('Vanilla');">Vanilla</a></li>
+    </ul>
+
+    <div id="Order">
+        <h2>Your Cake</h2>
+        <div id="divSize" >Size: </div>
+        <div id="cakeSize"></div>
+        <br />   
+        <div id="divFlavor" >Flavor: </div>
+        <div id="cakeFlavor"></div>
+        <br />  
+        <div id="divFrosting" >Frosting:</div>
+        <div id="cakeFrosting"></div>
+
+    </div>
+    <br />
+    <div>
+    <input type="button"  onclick="ordered()" value="Order" />
+        </div>
+</body>
+</html>
