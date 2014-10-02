@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hiring Filter</title>
+    <style type="text/css">
+        body
+        {
+           background-color: #FFFFEE;
+           font-family: Sans-Serif;
+        }
+        
+        li  
+        {
+            cursor: pointer;
+        }
+        
+        .header {
+            color: #000000;
+            width: 400px;
+        }
+        
+        .hidden  
+        {
+            display: none; 
+        }
+        
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script >
+        var correctAnswer = "Thank you. Please call 1-800-JOBS-NOW.";
+        var wrongAnswer = "Thank you. We will contact you if hell freezes over.";
+        $(document).ready(function () {
+
+            $("#degree li").click(function () {
+                var index = $(this).index();
+                var text = $(this).text();
+                // SANITY CHECK alert('Index is: ' + index + ' and text is ' + text);
+                $("#response").text("");
+                //remove selected
+                if (text == 'MIS') {
+                    $("#Finance").remove();
+                    $("#subMIS.hidden").toggle();
+                } else {
+                    $("#MIS").remove();
+                    $("#subFinance.hidden").toggle();
+                }
+
+
+            });
+
+            $("#ulSubFinance li").click(function () {
+                var text = $(this).text();
+
+                $("#subFinance.hidden").toggle();
+
+                if (text == "Net present value") {
+                    $("#response").text(correctAnswer);
+                } else {
+                    $("#response").text(wrongAnswer);
+                }
+            });
+
+            $("#ulSubMIS li").click(function () {
+                var text = $(this).text();
+
+                $("#subMIS.hidden").toggle();
+
+                if (text == "The look of Web content") {
+                    $("#response").text(correctAnswer);
+                } else {
+                    $("#response").text(wrongAnswer);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+     <h1 class="header">Job Application Center</h1>
+     <div>What is your degree in (click one)?</div>
+    <ul id="degree">
+        <li id="Finance">Finance</li>
+        <li id="MIS">MIS</li>
+    </ul>
+
+    <div id="subFinance" class="hidden">
+        <div>NPV is used to calculate (click one)?</div>
+            <ul id="ulSubFinance">
+                <li id="wNPV1">New projection venture</li>
+                <li id="NPV">Net present value</li>
+                <li id="wNPV2">Notarized production viability</li>
+                <li id="wNPV3">I don't know</li>
+            </ul>
+    </div>
+
+    <div id="subMIS"  class="hidden">
+        <div>CSS affects (click one)?</div>
+            <ul id="ulSubMIS">
+                <li id="CSS">The look of Web content</li>
+                <li id="wCSS1">The location of central system services</li>
+                <li id="wCSS2">How communication networks are synchronized</li>
+                <li id="wCSS3">I don't know</li>
+            </ul>
+    </div>
+
+    <div id="response">
+    </div>
+</body>
+</html>
