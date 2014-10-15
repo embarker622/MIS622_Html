@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercise: The best animal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>        
+        <script>
+           $(document).on('click', '.hand', function(event){
+            
+                $('#result').removeClass('wrong right');
+                $('#result').html('');
+                 
+                    
+                if(event.currentTarget.id === 'dog') {
+                     $('#result').html('Sorry, that\'s incorrect.');
+                    $('#result').addClass( 'wrong' );
+                }
+                
+                if(event.currentTarget.id === 'horse'){
+                    $('#result').html('Sorry, that\'s incorrect.');
+                    $('#result').addClass( 'wrong' );
+                }
+                
+                 if(event.currentTarget.id === 'cat'){
+                     $('#result').html('You got it right!');
+                     $('#result').addClass( 'right' );
+                }
+            });            
+        </script>
+        <style>
+            img{
+                padding: 15px 15px 15px 15px;
+            }
+            .hand{
+                cursor: crosshair;
+            }
+            .right{
+                color:black;
+                font-weight: 700;
+            }
+            .wrong{
+                color:red;
+                font-weight: 900;
+            }
+        </style>
+    </head>
+    <body>
+        <div><h3>Best Animal</h3></div>
+        <p>Please click on the best animal.</p>
+        <div class='imagect'>
+        <span class='hand' id='cat'><img src="images/cat.png" alt="Cat"/></span>
+         <span class='hand' id='dog'><img src="images/dog.jpg" alt="Dob"/></span>
+          <span class='hand' id='horse'><img src="images/horse.jpg" alt="Horse"/></span>
+        </div>
+        <p id='result'></p>
+    </body>
+</html>
