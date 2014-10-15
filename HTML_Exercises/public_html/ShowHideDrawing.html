@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Show and hide a drawing</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   
+        <script>
+            $(document).on("click",  ".toggle", function(){
+                $("#divPretzel").toggle();
+                });
+        </script>
+    </head>  
+    <body>
+        <div>Show and hide a drawing</div>
+        <div id="divPretzel">
+             <img src="images/pretzel.gif"  alt="yum!"/>            
+        </div>
+        <input type="button" class="toggle" value="Click Me" />
+    </body>
+</html>
