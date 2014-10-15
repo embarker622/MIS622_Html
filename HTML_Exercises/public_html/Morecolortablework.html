@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Exercise: More color table work</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            th,tfoot{
+                color: white;
+                background-color: grey !important;
+            }
+            col:first-child {
+                text-align: left;
+            }
+
+            tr td:nth-child(1n+2){
+                text-align: right;
+            }
+            tr td:nth-child(2) {
+                color:red;
+            }
+            tr td:nth-child(3) {
+                color:green;
+            }
+            tr td:nth-child(4) {
+                color:blue;
+            }
+        </style>        
+    </head>
+    <body>
+        <h1>Some colors</h1>
+        <table>
+         
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Red</th>
+                    <th>Green</th>
+                    <th>Blue</th>                
+                </tr>
+            </thead>  
+              <tbody>
+            <tr>
+                <td>Light Sand</td>
+                <td>254</td>
+                <td>255</td>
+                <td>239</td>                
+            </tr>
+            <tr>
+                <td>Beige</td>
+                <td>245</td>
+                <td>245</td>
+                <td>220</td>                
+            </tr>
+            <tr>
+                <td>Chocolate</td>
+                <td>210</td>
+                <td>105</td>
+                <td>30</td>                
+            </tr>  
+            <tr>
+                <td>Gray</td>
+                <td>190</td>
+                <td>190</td>
+                <td>190</td>                
+            </tr>  
+             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan='4'>
+                        Use like this: color: rgb(RED, GREEN, BLUE);
+                    </td>
+                </tr>
+            </tfoot> 
+           
+        </table>
+    </body>
+</html>
